@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      {{title}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <h3 text-center *ngIf="items.length === 0">
+    No items available.<br> Try adding one!
+  </h3>
+  <ion-list padding>
+    <ion-item-sliding *ngFor="let item of items, let i = index" #itemSliding>
+      <ion-item>
+        <h1>{{item.name}}</h1>
+        <h2>Quantity: {{item.quantity}}</h2>
+        <h2>Price: ${{item.price}}</h2>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="primary" (click)="editItem(item, i, itemSliding)">
+          <ion-icon name="construct"></ion-icon>
+          Edit
+        </button>
+        <button ion-button color="light" (click)="shareItem(item, itemSliding)">
+          <ion-icon name="share"></ion-icon>
+          Share
+        </button>
+        <button ion-button color="danger" icon-start (click)="deleteItem(item)">
+          <ion-icon name="trash"></ion-icon>
+          Delete
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-fab bottom right>
+    <button ion-fab (click)="addItem()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</ion-content>
