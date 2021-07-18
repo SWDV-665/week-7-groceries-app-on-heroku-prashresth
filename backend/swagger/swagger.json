@@ -1,0 +1,58 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Swagger UI for Dogs API",
+    "description": "Dogs API",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:5432",
+  "paths": {
+    "/Dogs/:id": {
+      "get": {
+        "tags": ["dog"],
+        "summary": "Get a Dog by ID",
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Dog"
+            },
+            "description": "Get a Dog by ID!!!"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Dog": {
+      "required": [
+        "_id"
+      ],
+      "properties": {
+        "_id": {
+          "type": "integer",
+          "uniqueItems": true
+        },
+        "isPublic": {
+          "type": "boolean"
+        }
+      }
+    },
+    "Dogs": {
+      "type": "array",
+      "$ref": "#/definitions/Dog"
+    }
+  },
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ]
+}
