@@ -1,4 +1,8 @@
 # week-7-groceries-app-on-heroku-prashresth
+
+### groceries app browser build hosted on firebase: https://groceries-8154d.web.app/
+### backend REST API hosted on heroku and data stored in mongo atlas: https://groceriesswdv655.herokuapp.com/api/grocery
+
 week-7-groceries-app-on-heroku-prashresth created by GitHub Classroom
 
 By end of this week, the Groceries' app should have its services deployed to Heroku.  
